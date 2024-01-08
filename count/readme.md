@@ -12,7 +12,7 @@ chmod +x ./count.js
 ### Usage
 
 ```bash
-./count.js [-h] [-p] [-a] [-t] [--pattern]
+./count.js [-h] [-p] [-a] [-t] [-n] [--pattern]
 ```
 
 ### Options [default]

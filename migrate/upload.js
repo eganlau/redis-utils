@@ -11,12 +11,14 @@ const { argv } = require('yargs')
   .default('p', 6379)
   .default('a', '')
   .default('t', false)
+  .default('n', 1)
   .default('filename', 'dump.json');
 
 const host = argv.h;
 const port = argv.p;
 const auth = argv.a;
 const tls = argv.t;
+const db = argv.n;
 const { filename } = argv;
 
 const startTime = new Date();
@@ -28,7 +30,8 @@ const promises = [];
 let redisConfig = {
   host: host,
   port: port,
-  password: auth
+  password: auth,
+  db: db
 }
 
 if (tls === true) (

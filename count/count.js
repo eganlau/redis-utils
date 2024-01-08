@@ -9,12 +9,14 @@ const { argv } = require('yargs')
   .default('p', 6379)
   .default('a', '')
   .default('t', false)
+  .default('n', 1)
   .default('pattern', '*');
 
 const host = argv.h;
 const port = argv.p;
 const auth = argv.a;
 const tls = argv.t;
+const db = argv.n;
 const { pattern } = argv;
 
 let roundCount = 0;
@@ -24,7 +26,8 @@ const startTime = new Date();
 let redisConfig = {
   host: host,
   port: port,
-  password: auth
+  password: auth,
+  db: db
 }
 
 if (tls === true) (
